@@ -1,11 +1,7 @@
 class ServicesController < ApplicationController
   
   def index
-    if params[:query].present?
-      @services = Service.search(params[:query])
-    else
-      @services = Service.all
-    end
+    @services = Service.search(params)
   end
   
 end
